@@ -183,6 +183,52 @@
     background: var(--bone);
   }
 
+  .section.dark {
+    background: var(--ink);
+    color: var(--bone);
+    padding: 80px 0;
+  }
+
+  .section.dark .h-med {
+    color: var(--paper);
+  }
+
+  .section.dark .h-med em {
+    color: var(--gold-soft);
+  }
+
+  .section.dark p.body {
+    color: rgba(242, 234, 216, 0.82);
+  }
+
+  .section.dark p.body em {
+    color: var(--gold-soft);
+    font-variation-settings: 'opsz' 36, 'SOFT' 100, 'WONK' 1;
+  }
+
+  .section.copper {
+    background: var(--copper);
+    color: var(--bone);
+    padding: 80px 0;
+  }
+
+  .section.copper .h-med {
+    color: var(--paper);
+  }
+
+  .section.copper .h-med em {
+    color: var(--gold-soft);
+  }
+
+  .section.copper p.body {
+    color: rgba(242, 234, 216, 0.9);
+  }
+
+  .section.copper p.body em {
+    color: var(--gold-soft);
+    font-variation-settings: 'opsz' 36, 'SOFT' 100, 'WONK' 1;
+  }
+
   .h-med {
     font-family: 'Fraunces', serif;
     font-size: clamp(28px, 8vw, 38px);
@@ -314,7 +360,7 @@
 </section>
 
 <!-- ============ WHAT WE'RE REALLY BUILDING ============ -->
-<section class="section">
+<section class="section dark">
   <div class="container">
     <h2 class="h-med">What we're <em>really building.</em></h2>
 
@@ -329,7 +375,7 @@
 </section>
 
 <!-- ============ PRESENCE IS THE WORK ============ -->
-<section class="section">
+<section class="section copper">
   <div class="container">
     <h2 class="h-med">Presence is <em>the work.</em></h2>
 
@@ -349,7 +395,7 @@
 </section>
 
 <!-- ============ AN INCUBATOR ON PURPOSE ============ -->
-<section class="section">
+<section class="section dark">
   <div class="container">
     <h2 class="h-med">An incubator, <em>on purpose.</em></h2>
 
@@ -367,9 +413,9 @@
 </section>
 
 <!-- ============ CLOSING ============ -->
-<section class="section">
+<section class="section dark">
   <div class="container">
-    <div class="closing">
+    <div class="closing" style="color: var(--paper);">
       <em>A community coming together as family — enjoying the evolution of this next generation.</em>
     </div>
   </div>
