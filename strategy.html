@@ -102,13 +102,11 @@
     transition: opacity 0.2s ease;
   }
 
-  .back-link:hover {
-    opacity: 0.7;
-  }
+  .back-link:hover { opacity: 0.7; }
 
   /* ============ HERO ============ */
   .hero {
-    padding: 40px 28px 56px;
+    padding: 40px 28px 60px;
     background: var(--bone);
   }
 
@@ -151,34 +149,30 @@
 
   .page-title {
     font-family: 'Fraunces', serif;
-    font-size: clamp(32px, 9vw, 48px);
+    font-size: clamp(36px, 11vw, 60px);
     font-weight: 500;
-    line-height: 1.05;
-    letter-spacing: -0.025em;
+    line-height: 1.0;
+    letter-spacing: -0.035em;
     color: var(--ink);
-    font-variation-settings: 'opsz' 72, 'SOFT' 30;
-    margin: 32px 0 24px;
+    font-variation-settings: 'opsz' 144, 'SOFT' 30;
+    margin: 36px 0 22px;
   }
 
   .page-title em {
     font-style: italic;
     color: var(--terracotta);
-    font-variation-settings: 'opsz' 72, 'SOFT' 100, 'WONK' 1;
+    font-variation-settings: 'opsz' 144, 'SOFT' 100, 'WONK' 1;
   }
 
   .page-subhead {
     font-family: 'Fraunces', serif;
-    font-size: clamp(18px, 5vw, 22px);
-    font-weight: 380;
-    line-height: 1.4;
-    color: var(--ink-soft);
+    font-size: clamp(20px, 5.6vw, 26px);
+    font-weight: 400;
+    line-height: 1.32;
+    color: var(--terracotta);
+    font-style: italic;
     letter-spacing: -0.012em;
     margin-bottom: 16px;
-  }
-
-  .page-subhead em {
-    font-style: italic;
-    color: var(--terracotta);
     font-variation-settings: 'opsz' 36, 'SOFT' 100, 'WONK' 1;
   }
 
@@ -190,10 +184,34 @@
     max-width: 500px;
   }
 
+  .hero-rule {
+    height: 1px;
+    background: var(--rule);
+    margin-top: 36px;
+  }
+
+  /* ============ SECTION EYEBROW ============ */
+  .section-eyebrow {
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-eyebrow .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--terracotta);
+    flex: none;
+  }
+
   /* ============ SECTIONS ============ */
   .section {
-    padding: 56px 0;
+    padding: 60px 0;
     background: var(--bone);
+  }
+
+  .section + .section {
+    border-top: 1px solid rgba(31, 22, 17, 0.08);
   }
 
   .h-med {
@@ -204,7 +222,7 @@
     letter-spacing: -0.025em;
     color: var(--ink);
     font-variation-settings: 'opsz' 72, 'SOFT' 30;
-    margin-bottom: 24px;
+    margin-bottom: 22px;
   }
 
   .h-med em {
@@ -213,12 +231,41 @@
     font-variation-settings: 'opsz' 72, 'SOFT' 100, 'WONK' 1;
   }
 
+  .h-big {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(44px, 13vw, 66px);
+    font-weight: 500;
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+    color: var(--ink);
+    font-variation-settings: 'opsz' 144, 'SOFT' 30;
+    margin-bottom: 8px;
+  }
+
+  .h-big em {
+    font-style: italic;
+    color: var(--terracotta);
+    font-variation-settings: 'opsz' 144, 'SOFT' 100, 'WONK' 1;
+  }
+
+  .lede {
+    font-family: 'Fraunces', serif;
+    font-size: 21px;
+    font-weight: 380;
+    line-height: 1.35;
+    color: var(--ink-soft);
+    margin: 6px 0 22px;
+    letter-spacing: -0.012em;
+  }
+
   p.body {
     font-size: 17px;
     line-height: 1.6;
     color: var(--ink);
     margin-bottom: 16px;
   }
+
+  p.body:last-child { margin-bottom: 0; }
 
   p.body em {
     font-style: italic;
@@ -234,29 +281,26 @@
     font-variation-settings: 'opsz' 36, 'SOFT' 100, 'WONK' 1;
   }
 
-  /* In-text links */
-  a {
+  /* In-text links (scoped so cards/back-link stay clean) */
+  p.body a {
     color: var(--terracotta);
     text-decoration: none;
-    border-bottom: 1px solid rgba(181, 72, 44, 0.3);
+    border-bottom: 1px solid rgba(181, 72, 44, 0.35);
     transition: border-color 0.2s ease;
   }
+  p.body a:hover { border-bottom-color: var(--terracotta); }
+  p.body a em { font-style: italic; }
 
-  a:hover {
-    border-bottom-color: var(--terracotta);
-  }
-
-  a em {
-    font-style: italic;
-  }
-
-  /* Committee names */
+  /* ============ COMMITTEE NAMES ============ */
   .names {
-    margin: 24px 0 24px;
+    margin: 26px 0;
+    padding: 22px 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
     font-family: 'Fraunces', serif;
-    font-size: clamp(20px, 6vw, 28px);
+    font-size: clamp(21px, 6vw, 30px);
     font-weight: 480;
-    line-height: 1.18;
+    line-height: 1.25;
     letter-spacing: -0.025em;
     color: var(--ink);
     font-variation-settings: 'opsz' 72, 'SOFT' 30;
@@ -267,13 +311,215 @@
     font-style: italic;
     color: var(--terracotta);
     font-variation-settings: 'opsz' 72, 'SOFT' 100, 'WONK' 1;
-    margin: 0 8px;
+    margin: 0 7px;
   }
 
-  /* Emphasized closing line */
+  /* ============ CARDS ============ */
+  .card-stack {
+    margin: 28px 0 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .card {
+    padding: 22px 22px 24px;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    position: relative;
+  }
+
+  .card .num {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--terracotta);
+    font-variation-settings: 'opsz' 36, 'SOFT' 100, 'WONK' 1;
+    margin-bottom: 6px;
+    letter-spacing: 0;
+  }
+
+  .card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 8px;
+    letter-spacing: -0.018em;
+    font-variation-settings: 'opsz' 36, 'SOFT' 40;
+  }
+
+  .card h3 .when {
+    display: block;
+    font-size: 13px;
+    font-style: italic;
+    color: var(--terracotta);
+    margin-top: 2px;
+    font-variation-settings: 'opsz' 36, 'SOFT' 100, 'WONK' 1;
+  }
+
+  .card p {
+    font-size: 15.5px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+  }
+
+  /* ============ DARK + COPPER BANDS ============ */
+  .band {
+    color: var(--bone);
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .band.dark { background: var(--ink); }
+  .band.copper { background: var(--copper); }
+
+  .band .h-med, .band .h-big { color: var(--paper); }
+  .band .h-med em, .band .h-big em { color: var(--gold-soft); }
+  .band p.body { color: rgba(242, 234, 216, 0.86); }
+  .band p.body em { color: var(--gold-soft); }
+  .band .lede { color: rgba(242, 234, 216, 0.9); }
+  .band .eyebrow { color: rgba(242, 234, 216, 0.6); }
+  .band .section-eyebrow .dot { background: var(--gold-soft); }
+  .band .label { color: var(--gold-soft); }
+
+  /* ============ COHORT BIG NUMBER ============ */
+  .big-number {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(150px, 48vw, 240px);
+    font-weight: 300;
+    line-height: 0.82;
+    color: var(--gold-soft);
+    font-style: italic;
+    font-variation-settings: 'opsz' 144, 'SOFT' 100, 'WONK' 1;
+    letter-spacing: -0.05em;
+    margin-bottom: -0.06em;
+    text-align: left;
+  }
+
+  .cohort-dots {
+    display: flex;
+    gap: 8px;
+    margin: 24px 0 4px;
+  }
+  .cohort-dots .d {
+    width: 13px; height: 13px; border-radius: 50%;
+    background: var(--gold-soft);
+    opacity: 0;
+    transform: scale(0.6);
+    transition: opacity .5s ease, transform .6s cubic-bezier(.34,1.56,.64,1);
+  }
+  .cohort.in-view .cohort-dots .d { opacity: 1; transform: scale(1); }
+  .cohort.in-view .cohort-dots .d:nth-child(1) { transition-delay: .15s; }
+  .cohort.in-view .cohort-dots .d:nth-child(2) { transition-delay: .25s; }
+  .cohort.in-view .cohort-dots .d:nth-child(3) { transition-delay: .35s; }
+  .cohort.in-view .cohort-dots .d:nth-child(4) { transition-delay: .45s; }
+  .cohort.in-view .cohort-dots .d:nth-child(5) { transition-delay: .55s; }
+  .cohort.in-view .cohort-dots .d:nth-child(6) { transition-delay: .65s; }
+  .cohort.in-view .cohort-dots .d:nth-child(7) { transition-delay: .75s; }
+
+  /* ============ FUNDING FIGURES ============ */
+  .funding-figures {
+    display: flex;
+    gap: 24px;
+    margin: 28px 0 8px;
+    flex-wrap: wrap;
+  }
+
+  .fig {
+    flex: 1 1 auto;
+    min-width: 90px;
+  }
+
+  .fig .amt {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(34px, 11vw, 46px);
+    font-weight: 400;
+    color: var(--paper);
+    line-height: 1;
+    letter-spacing: -0.025em;
+    font-variation-settings: 'opsz' 72, 'SOFT' 40;
+  }
+
+  .fig .amt em {
+    font-style: italic;
+    color: var(--gold-soft);
+    font-variation-settings: 'opsz' 72, 'SOFT' 100, 'WONK' 1;
+  }
+
+  .fig .lbl {
+    margin-top: 8px;
+    font-size: 11.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(242, 234, 216, 0.6);
+    line-height: 1.4;
+  }
+
+  /* ============ PULL QUOTE ============ */
+  .pullquote {
+    margin: 36px 0 0;
+    padding: 26px 0 6px 22px;
+    border-left: 3px solid var(--gold);
+    font-family: 'Fraunces', serif;
+    font-size: clamp(23px, 6.2vw, 29px);
+    font-weight: 380;
+    line-height: 1.2;
+    letter-spacing: -0.022em;
+    color: var(--paper);
+    font-variation-settings: 'opsz' 60, 'SOFT' 40;
+  }
+
+  .pullquote em {
+    font-style: italic;
+    color: var(--gold-soft);
+    font-variation-settings: 'opsz' 60, 'SOFT' 100, 'WONK' 1;
+  }
+
+  /* ============ STEPS (operating structure) ============ */
+  .steps {
+    margin: 26px 0 8px;
+    position: relative;
+    padding-left: 26px;
+  }
+  .steps::before {
+    content: '';
+    position: absolute;
+    left: 5px; top: 6px; bottom: 6px;
+    width: 1px;
+    background: var(--rule);
+  }
+  .step { position: relative; margin-bottom: 22px; }
+  .step:last-child { margin-bottom: 0; }
+  .step::before {
+    content: '';
+    position: absolute;
+    left: -26px; top: 6px;
+    width: 11px; height: 11px;
+    border-radius: 50%;
+    background: var(--bone);
+    border: 2px solid var(--terracotta);
+  }
+  .step .step-label {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--terracotta);
+    font-variation-settings: 'opsz' 36, 'SOFT' 100, 'WONK' 1;
+    margin-bottom: 5px;
+  }
+  .step p {
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+
+  /* ============ CLOSING ============ */
   .closing {
-    margin: 56px 0;
-    padding: 48px 0;
+    margin: 0;
+    padding: 8px 0;
     text-align: center;
     font-family: 'Fraunces', serif;
     font-size: clamp(24px, 6.5vw, 30px);
@@ -288,6 +534,25 @@
     font-style: italic;
     color: var(--terracotta);
     font-variation-settings: 'opsz' 60, 'SOFT' 100, 'WONK' 1;
+  }
+
+  .section-closer { padding: 72px 0 80px; }
+
+  .ornament {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    margin: 0 auto 28px;
+    color: var(--terracotta);
+    font-size: 13px;
+    opacity: 0.7;
+  }
+  .ornament::before, .ornament::after {
+    content: '';
+    height: 1px; width: 38px;
+    background: currentColor;
+    opacity: 0.5;
   }
 
   /* ============ FOOTER ============ */
@@ -308,6 +573,26 @@
     font-style: italic;
     color: var(--terracotta);
   }
+
+  /* ============ REVEAL ANIMATION ============ */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .9s ease-out, transform .9s cubic-bezier(.22,.61,.36,1);
+  }
+  .reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-d1 { transition-delay: .1s; }
+  .reveal-d2 { transition-delay: .2s; }
+  .reveal-d3 { transition-delay: .3s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal, .cohort-dots .d { transition: none; }
+    .reveal { opacity: 1; transform: none; }
+    .cohort-dots .d { opacity: 1; transform: none; }
+  }
 </style>
 </head>
 <body>
@@ -327,171 +612,242 @@
       <span class="sub">Community Scholarship</span>
     </div>
 
-    <h1 class="page-title">Strategy & Game Plan</h1>
+    <h1 class="page-title">Strategy &amp; Game Plan</h1>
 
-    <p class="page-subhead"><em>The plan we are running.</em></p>
+    <p class="page-subhead">The plan we are running.</p>
 
     <p class="page-framing">The choices and the structure behind the work — always reflecting the current state.</p>
+
+    <div class="hero-rule"></div>
   </div>
 </section>
 
 <!-- ============ VISION AND MISSION ============ -->
 <section class="section">
   <div class="container">
-    <h2 class="h-med">Vision and <em>mission.</em></h2>
+    <div class="section-eyebrow reveal"><div class="dot"></div><div class="eyebrow">The why</div></div>
 
-    <p class="body"><span class="label">Vision.</span> A community investing in its own young adults, summer by summer — family, not philanthropy. The scholarship is one important initiative, not the point. The point is a circle of friends, peers, and grown men with that same path behind them, showing up for the young adults around them.</p>
+    <h2 class="h-med reveal reveal-d1">Vision and <em>mission.</em></h2>
 
-    <p class="body"><span class="label">Mission.</span> La Familia formalizes the support layer around more than a decade of organic mentorship that grew on a court in our community. We provide scholarship support and shared experiences to a known group of young adults, and we close the loop with the people who fund the work.</p>
+    <p class="body reveal reveal-d2"><span class="label">Vision.</span> A community investing in its own young adults, summer by summer — family, not philanthropy. The scholarship is one important initiative, not the point. The point is a circle of friends, peers, and grown men with that same path behind them, showing up for the young adults around them.</p>
 
-    <p class="body">For the fuller story behind the work, see <a href="the-initiative.html"><em>The Initiative</em></a>.</p>
+    <p class="body reveal"><span class="label">Mission.</span> La Familia formalizes the support layer around more than a decade of organic mentorship that grew on a court in our community. We provide scholarship support and shared experiences to a known group of young adults, and we close the loop with the people who fund the work.</p>
+
+    <p class="body reveal">For the fuller story behind the work, see <a href="the-initiative.html"><em>The Initiative</em></a>.</p>
   </div>
 </section>
 
 <!-- ============ THE COMMITTEE ============ -->
 <section class="section">
   <div class="container">
-    <h2 class="h-med">The <em>committee.</em></h2>
+    <div class="section-eyebrow reveal"><div class="dot"></div><div class="eyebrow">The circle</div></div>
 
-    <p class="body"><span class="label">Mario Ramos — Chairperson.</span> Champions the initiative. Holds the relationships with the young adults and their families. Leads disbursement decisions with the committee. Mario's time is evenings and weekends around a full-time job — the committee carries the operational lift so Mario's hands stay on relationships and judgment, where they belong.</p>
+    <h2 class="h-med reveal reveal-d1">The <em>committee.</em></h2>
 
-    <p class="body"><span class="label">The members.</span></p>
+    <p class="body reveal reveal-d2"><span class="label">Mario Ramos — Chairperson.</span> Champions the initiative. Holds the relationships with the young adults and their families. Leads disbursement decisions with the committee. Mario's time is evenings and weekends around a full-time job — the committee carries the operational lift so Mario's hands stay on relationships and judgment, where they belong.</p>
 
-    <div class="names">
+    <p class="body reveal"><span class="label">The members.</span></p>
+
+    <div class="names reveal">
       Munchie <span class="conj">·</span> Rob <span class="conj">·</span> Ray <span class="conj">·</span> Rey <span class="conj">·</span> Justin <span class="conj">·</span> Elliott <span class="conj">·</span> Jesus <span class="conj">·</span> Tony
     </div>
 
-    <p class="body">The committee spans walks of life — first responders (active and retired police and firefighters), tradesmen, and tech, real-estate, and business professionals. That range is the credibility asset. These are not "mentors." These are men from across the community, showing up.</p>
+    <p class="body reveal">The committee spans walks of life — first responders (active and retired police and firefighters), tradesmen, and tech, real-estate, and business professionals. That range is the credibility asset. These are not "mentors." These are men from across the community, showing up.</p>
 
-    <p class="body"><span class="label">Pedro Rosa — Facilitator.</span> Operational, technology, and project-management support. Maintains the canonical artifacts, the ledger, and the site.</p>
+    <p class="body reveal"><span class="label">Pedro Rosa — Facilitator.</span> Operational, technology, and project-management support. Maintains the canonical artifacts, the ledger, and the site.</p>
 
-    <p class="body"><span class="label">How we decide.</span> We decide together. Material decisions move through equal committee-member support. Championed by Mario, owned by the members.</p>
+    <p class="body reveal"><span class="label">How we decide.</span> We decide together. Material decisions move through equal committee-member support. Championed by Mario, owned by the members.</p>
 
-    <p class="body"><span class="label">Operating year (founding).</span> Friends-and-family, informal. The only formalization expected this year is to instantiate an LLC and open a bank account under the LLC. Beyond that is deferred.</p>
+    <p class="body reveal"><span class="label">Operating year (founding).</span> Friends-and-family, informal. The only formalization expected this year is to instantiate an LLC and open a bank account under the LLC. Beyond that is deferred.</p>
   </div>
 </section>
 
-<!-- ============ WHO WE SERVE ============ -->
-<section class="section">
+<!-- ============ WHO WE SERVE (COPPER BAND) ============ -->
+<section class="band copper cohort">
   <div class="container">
-    <h2 class="h-med">Who we <em>serve.</em></h2>
+    <div class="section-eyebrow reveal"><div class="dot"></div><div class="eyebrow">Who we serve</div></div>
 
-    <p class="body"><span class="label">The founding cohort: seven young adults.</span> Identified, known, and earned. These are not aspirational picks. They are the young adults who have shown up year after year — on the court and in the moments that matter — with consistency and earnestness. They span high school through college.</p>
+    <div class="big-number reveal reveal-d1">7</div>
 
-    <p class="body"><span class="label">Selection philosophy.</span> Participation and consistency, not a formal screen. The cohort came together by word of mouth. As new participants prove the same consistency, the circle grows; as the current seven move through school and college, new faces make their way in.</p>
+    <h2 class="h-med reveal reveal-d2">Seven young adults.<br><em>Identified. Known. Earned.</em></h2>
 
-    <p class="body"><span class="label">Geography.</span> Across the Chicago metropolitan area, with a base on the Northwest side and reach to Hyde Park and beyond.</p>
+    <div class="cohort-dots">
+      <span class="d"></span><span class="d"></span><span class="d"></span><span class="d"></span><span class="d"></span><span class="d"></span><span class="d"></span>
+    </div>
 
-    <p class="body"><span class="label">The application.</span> A scholarship application functions as each young adult's own commitment — completed and signed before support is delivered.</p>
+    <p class="body reveal reveal-d3" style="margin-top: 20px;">These are not aspirational picks. They are the young adults who have shown up year after year — on the court and in the moments that matter — with consistency and earnestness. They span high school through college.</p>
+
+    <p class="body reveal"><span class="label">Selection philosophy.</span> Participation and consistency, not a formal screen. The cohort came together by word of mouth. As new participants prove the same consistency, the circle grows; as the current seven move through school and college, new faces make their way in.</p>
+
+    <p class="body reveal"><span class="label">Geography.</span> Across the Chicago metropolitan area, with a base on the Northwest side and reach to Hyde Park and beyond.</p>
+
+    <p class="body reveal"><span class="label">The application.</span> A scholarship application functions as each young adult's own commitment — completed and signed before support is delivered.</p>
   </div>
 </section>
 
 <!-- ============ SCHOLARSHIP CHANNELS ============ -->
 <section class="section">
   <div class="container">
-    <h2 class="h-med">Scholarship <em>channels.</em></h2>
+    <div class="section-eyebrow reveal"><div class="dot"></div><div class="eyebrow">How support flows</div></div>
 
-    <p class="body">Support is disbursed through three channels, age-gated so funds reach a young adult in the way that makes the most sense.</p>
+    <h2 class="h-med reveal reveal-d1">Scholarship <em>channels.</em></h2>
 
-    <p class="body"><span class="label">Cash to the parent.</span> For anyone under 18 or not yet graduated from high school — including minors going on trips or summer programs. Funds go to the parent, in the young adult's name.</p>
+    <p class="body reveal reveal-d2">Support is disbursed through three channels, age-gated so funds reach a young adult in the way that makes the most sense.</p>
 
-    <p class="body"><span class="label">Cash to the student.</span> For students who are 18 or older and in college, managing their own affairs — for example, around $500 toward books, gear, or college expenses, used at the student's discretion.</p>
+    <div class="card-stack">
+      <div class="card reveal">
+        <div class="num">01</div>
+        <h3>Cash to the parent</h3>
+        <p>For anyone under 18 or not yet graduated from high school — including minors going on trips or summer programs. Funds go to the parent, in the young adult's name.</p>
+      </div>
+      <div class="card reveal">
+        <div class="num">02</div>
+        <h3>Cash to the student</h3>
+        <p>For students who are 18 or older and in college, managing their own affairs — for example, around $500 toward books, gear, or college expenses, used at the student's discretion.</p>
+      </div>
+      <div class="card reveal">
+        <div class="num">03</div>
+        <h3>Direct payment to a vendor</h3>
+        <p>For specific initiative costs — college-visit travel, books, program fees. The scholarship pays the vendor directly.</p>
+      </div>
+    </div>
 
-    <p class="body"><span class="label">Direct payment to a vendor.</span> For specific initiative costs — college-visit travel, books, program fees. The scholarship pays the vendor directly.</p>
-
-    <p class="body"><span class="label">Distribution philosophy.</span> Per-student amounts are at the discretion of Mario and the committee — need-, age-, and goal-aware. What a graduating senior weighing college visits needs is different from what a high schooler joining the summer trip needs. The committee allocates by judgment, not even split.</p>
+    <p class="body reveal" style="margin-top: 22px;"><span class="label">Distribution philosophy.</span> Per-student amounts are at the discretion of Mario and the committee — need-, age-, and goal-aware. What a graduating senior weighing college visits needs is different from what a high schooler joining the summer trip needs. The committee allocates by judgment, not even split.</p>
   </div>
 </section>
 
 <!-- ============ PROGRAMMATIC INITIATIVES ============ -->
 <section class="section">
   <div class="container">
-    <h2 class="h-med">Programmatic <em>initiatives.</em></h2>
+    <div class="section-eyebrow reveal"><div class="dot"></div><div class="eyebrow">Presence in action</div></div>
 
-    <p class="body">Beyond the scholarship itself, La Familia executes three programmatic initiatives in the founding summer. The intent is <em>presence</em> — being in the moments that shape a young adult's trajectory.</p>
+    <h2 class="h-med reveal reveal-d1">Programmatic <em>initiatives.</em></h2>
 
-    <p class="body"><span class="label">A game together (June – early July).</span> The cohort to a live game in the Chicago area — a shared memory outside the court and outside the home.</p>
+    <p class="body reveal reveal-d2">Beyond the scholarship itself, La Familia executes three programmatic initiatives in the founding summer. The intent is <em>presence</em> — being in the moments that shape a young adult's trajectory.</p>
 
-    <p class="body"><span class="label">A summer trip (anytime through the summer).</span> A trip outside Chicago, chaperoned by the committee. For many of the seven, the first trip of its kind.</p>
+    <div class="card-stack">
+      <div class="card reveal">
+        <div class="num">01</div>
+        <h3>A game together<span class="when">June – early July</span></h3>
+        <p>The cohort to a live game in the Chicago area — a shared memory outside the court and outside the home.</p>
+      </div>
+      <div class="card reveal">
+        <div class="num">02</div>
+        <h3>A summer trip<span class="when">Anytime through the summer</span></h3>
+        <p>A trip outside Chicago, chaperoned by the committee. For many of the seven, the first trip of its kind.</p>
+      </div>
+      <div class="card reveal">
+        <div class="num">03</div>
+        <h3>College visits<span class="when">June – early July</span></h3>
+        <p>Campus visits for students considering college, and for underclassmen and summer-program participants. Walking a campus changes what feels possible.</p>
+      </div>
+    </div>
 
-    <p class="body"><span class="label">College visits (June – early July).</span> Campus visits for students considering college, and for underclassmen and summer-program participants. Walking a campus changes what feels possible.</p>
-
-    <p class="body"><span class="label">Budget.</span> Overall and per-initiative budgets are an active action item.</p>
+    <p class="body reveal" style="margin-top: 22px;"><span class="label">Budget.</span> Overall and per-initiative budgets are an active action item.</p>
   </div>
 </section>
 
-<!-- ============ FUNDING MODEL ============ -->
-<section class="section">
+<!-- ============ FUNDING MODEL (DARK BAND) ============ -->
+<section class="band dark">
   <div class="container">
-    <h2 class="h-med">Funding <em>model.</em></h2>
+    <div class="section-eyebrow reveal"><div class="dot"></div><div class="eyebrow">The funding model</div></div>
 
-    <p class="body"><span class="label">One-time annual contributions.</span> Contributions are one-time and annual. No recurring mechanism, no contracts, no formal pledges this founding year.</p>
+    <h2 class="h-big reveal reveal-d1">The ask is <em>$50.</em></h2>
 
-    <p class="body"><span class="label">The ask: $50.</span> Small enough to be a low barrier, meaningful at scale. From friends and family who believe in this work.</p>
+    <p class="lede reveal reveal-d2" style="color: rgba(242, 234, 216, 0.85);">Small enough to be a low barrier, meaningful at scale. From friends and family who believe in this work.</p>
 
-    <p class="body"><span class="label">Individual ceiling: $1,000.</span> We accept up to $1,000 from any single donor this founding year. The ceiling is not a limit on belief — it is a deliberate scaling constraint. We are in a learning year and we are keeping the operation intimate.</p>
-
-    <p class="body"><span class="label">Baseline target: ~$2,500.</span> A target to work toward, not a cap. A current working figure, to be revisited as initiative budgets are finalized.</p>
-
-    <p class="body"><span class="label">Larger commitments.</span> A markedly larger commitment — in the $4,000–$5,000 range or above — would trigger added rigor around legal and tax structure before it is accepted. Record-keeping today is designed to support that transition without rework.</p>
-
-    <div class="closing">
-      <em>Better to do right by these young adults than to grow before we are ready.</em>
+    <div class="funding-figures reveal reveal-d2">
+      <div class="fig">
+        <div class="amt">$<em>50</em></div>
+        <div class="lbl">The ask</div>
+      </div>
+      <div class="fig">
+        <div class="amt">$1,000</div>
+        <div class="lbl">Individual ceiling</div>
+      </div>
+      <div class="fig">
+        <div class="amt">$2,500</div>
+        <div class="lbl">Baseline target</div>
+      </div>
     </div>
+
+    <p class="body reveal" style="margin-top: 26px;"><span class="label">One-time annual contributions.</span> Contributions are one-time and annual. No recurring mechanism, no contracts, no formal pledges this founding year.</p>
+
+    <p class="body reveal"><span class="label">Individual ceiling: $1,000.</span> We accept up to $1,000 from any single donor this founding year. The ceiling is not a limit on belief — it is a deliberate scaling constraint. We are in a learning year and we are keeping the operation intimate.</p>
+
+    <p class="body reveal"><span class="label">Baseline target: ~$2,500.</span> A target to work toward, not a cap. A current working figure, to be revisited as initiative budgets are finalized.</p>
+
+    <p class="body reveal"><span class="label">Larger commitments.</span> A markedly larger commitment — in the $4,000–$5,000 range or above — would trigger added rigor around legal and tax structure before it is accepted. Record-keeping today is designed to support that transition without rework.</p>
+
+    <div class="pullquote reveal">Better to do right by <em>these young adults</em> than to grow before we are ready.</div>
   </div>
 </section>
 
 <!-- ============ DONOR EXPERIENCE ============ -->
 <section class="section">
   <div class="container">
-    <h2 class="h-med">Donor <em>experience.</em></h2>
+    <div class="section-eyebrow reveal"><div class="dot"></div><div class="eyebrow">Closing the loop</div></div>
 
-    <p class="body">The donor experience is about feeling part of something good — human and relational, not bureaucratic. We close the loop with every donor.</p>
+    <h2 class="h-med reveal reveal-d1">Donor <em>experience.</em></h2>
 
-    <p class="body"><span class="label">Records.</span> A ledger of who gave and how much, and a separate record of what the young adults did with the support.</p>
+    <p class="body reveal reveal-d2">The donor experience is about feeling part of something good — human and relational, not bureaucratic. We close the loop with every donor.</p>
 
-    <p class="body"><span class="label">Receipt.</span> Each donor receives a receipt stating the amount, expressing gratitude, and noting that the contribution is made with the understanding that there is no tax deduction or exemption at this time. This is an acknowledgment, not a tax document.</p>
+    <p class="body reveal"><span class="label">Records.</span> A ledger of who gave and how much, and a separate record of what the young adults did with the support.</p>
 
-    <p class="body"><span class="label">Touchpoints.</span> A personal acknowledgment when a gift comes in, a midsummer update, and a post-summer recap.</p>
+    <p class="body reveal"><span class="label">Receipt.</span> Each donor receives a receipt stating the amount, expressing gratitude, and noting that the contribution is made with the understanding that there is no tax deduction or exemption at this time. This is an acknowledgment, not a tax document.</p>
 
-    <p class="body"><span class="label">Optional, never pressured.</span> Where it fits, a supported young adult may send a brief, positive note back — framed as receptivity, never as an obligation.</p>
+    <p class="body reveal"><span class="label">Touchpoints.</span> A personal acknowledgment when a gift comes in, a midsummer update, and a post-summer recap.</p>
+
+    <p class="body reveal"><span class="label">Optional, never pressured.</span> Where it fits, a supported young adult may send a brief, positive note back — framed as receptivity, never as an obligation.</p>
   </div>
 </section>
 
 <!-- ============ OPERATING STRUCTURE ============ -->
 <section class="section">
   <div class="container">
-    <h2 class="h-med">Operating <em>structure.</em></h2>
+    <div class="section-eyebrow reveal"><div class="dot"></div><div class="eyebrow">The mechanics</div></div>
 
-    <p class="body"><span class="label">Structure.</span> An LLC with a bank account under the LLC (Chase).</p>
+    <h2 class="h-med reveal reveal-d1">Operating <em>structure.</em></h2>
 
-    <p class="body"><span class="label">Phase 1 (near term).</span> Donors are directed to a committee member, who shares the details to send a Zelle payment to the LLC's Chase account; the committee follows up with a receipt. Donors may also Zelle the account directly.</p>
+    <p class="body reveal reveal-d2"><span class="label">Structure.</span> An LLC with a bank account under the LLC (Chase).</p>
 
-    <p class="body"><span class="label">Phase 2 (planned).</span> A Stripe-connected donation button on a public donation site.</p>
+    <div class="steps reveal">
+      <div class="step">
+        <div class="step-label">Phase 1 — near term</div>
+        <p>Donors are directed to a committee member, who shares the details to send a Zelle payment to the LLC's Chase account; the committee follows up with a receipt. Donors may also Zelle the account directly.</p>
+      </div>
+      <div class="step">
+        <div class="step-label">Phase 2 — planned</div>
+        <p>A Stripe-connected donation button on a public donation site.</p>
+      </div>
+    </div>
 
-    <p class="body">All contributions carry the friends-and-family disclaimer noted above.</p>
+    <p class="body reveal" style="margin-top: 22px;">All contributions carry the friends-and-family disclaimer noted above.</p>
   </div>
 </section>
 
 <!-- ============ WHERE THIS IS GOING ============ -->
 <section class="section">
   <div class="container">
-    <h2 class="h-med">Where this <em>is going.</em></h2>
+    <div class="section-eyebrow reveal"><div class="dot"></div><div class="eyebrow">The horizon</div></div>
 
-    <p class="body"><span class="label">Year-round, not summer-only.</span> The committee is committed to this work year-round, not to a single summer. The founding year is a starting point, not a season.</p>
+    <h2 class="h-med reveal reveal-d1">Where this <em>is going.</em></h2>
 
-    <p class="body"><span class="label">Momentum is already real.</span> Giving has begun organically — committee members talking to their networks, people contributing on the spot. The structure is catching up to the energy.</p>
+    <p class="body reveal reveal-d2"><span class="label">Year-round, not summer-only.</span> The committee is committed to this work year-round, not to a single summer. The founding year is a starting point, not a season.</p>
 
-    <p class="body"><span class="label">Deeper formalization, when it makes sense.</span> Beyond the founding-year LLC and bank account, evaluating legal and tax structure is deferred to a future session — or sooner, if a larger commitment makes it the right call.</p>
+    <p class="body reveal"><span class="label">Momentum is already real.</span> Giving has begun organically — committee members talking to their networks, people contributing on the spot. The structure is catching up to the energy.</p>
 
-    <p class="body"><span class="label">Cohort over crowd, for now.</span> We are not optimizing for scale. We are optimizing to do this right by the young adults in front of us, and to learn what we need to learn before we grow.</p>
+    <p class="body reveal"><span class="label">Deeper formalization, when it makes sense.</span> Beyond the founding-year LLC and bank account, evaluating legal and tax structure is deferred to a future session — or sooner, if a larger commitment makes it the right call.</p>
+
+    <p class="body reveal"><span class="label">Cohort over crowd, for now.</span> We are not optimizing for scale. We are optimizing to do this right by the young adults in front of us, and to learn what we need to learn before we grow.</p>
   </div>
 </section>
 
 <!-- ============ FINAL CLOSING ============ -->
-<section class="section">
+<section class="section section-closer">
   <div class="container">
-    <div class="closing">
+    <div class="ornament reveal">✦</div>
+    <div class="closing reveal reveal-d1">
       <em>This is the plan. The rest is showing up.</em>
     </div>
   </div>
@@ -501,6 +857,20 @@
 <section class="footer">
   <p>La Familia Community Scholarship · Chicago · <em>2026</em></p>
 </section>
+
+<script>
+  // Intersection-based reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+
+  document.querySelectorAll('.reveal, .cohort').forEach(el => io.observe(el));
+</script>
 
 </body>
 </html>
