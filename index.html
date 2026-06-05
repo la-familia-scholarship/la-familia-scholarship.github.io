@@ -40,7 +40,7 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Warm grain overlay */
+  /* Warm grain overlay across the whole page */
   body::before {
     content: '';
     position: fixed;
@@ -92,21 +92,40 @@
     position: relative;
   }
 
+  .hero-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.2s forwards;
+  }
+
   .hero-headline {
     margin: 0 -4px;
     opacity: 0;
-    animation: fadeUp 1.2s ease-out 0.3s forwards;
+    animation: fadeUp 1.2s ease-out 0.5s forwards;
+  }
+
+  .hero-headline .la {
+    display: block;
+    font-size: clamp(54px, 20vw, 96px);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--terracotta);
+    line-height: 0.92;
+    font-variation-settings: 'opsz' 144, 'SOFT' 100, 'WONK' 1;
+    margin-bottom: -0.08em;
   }
 
   .hero-headline .familia {
     display: block;
-    font-size: clamp(48px, 18vw, 84px);
+    font-size: clamp(60px, 22vw, 104px);
     font-weight: 600;
     color: var(--ink);
     line-height: 0.95;
     letter-spacing: -0.04em;
     font-variation-settings: 'opsz' 144, 'SOFT' 20;
-    margin-bottom: 0.1em;
   }
 
   .hero-headline .sub {
@@ -114,131 +133,114 @@
     font-family: 'Fraunces', serif;
     font-style: italic;
     font-weight: 400;
-    font-size: clamp(18px, 5vw, 24px);
+    font-size: clamp(20px, 6vw, 28px);
     color: var(--copper);
+    margin-top: 14px;
     letter-spacing: -0.01em;
     font-variation-settings: 'opsz' 36, 'SOFT' 60;
   }
 
   .hero-mission {
-    margin-top: 20px;
+    margin-top: 28px;
     font-family: 'Fraunces', serif;
-    font-size: clamp(18px, 5vw, 22px);
-    line-height: 1.4;
-    color: var(--ink-soft);
-    max-width: 400px;
+    font-size: clamp(21px, 5.6vw, 26px);
+    line-height: 1.32;
+    color: var(--ink);
+    max-width: 380px;
     font-weight: 400;
     letter-spacing: -0.012em;
     opacity: 0;
-    animation: fadeUp 1.2s ease-out 0.7s forwards;
+    animation: fadeUp 1.2s ease-out 0.9s forwards;
   }
 
   .hero-mission em {
     font-style: italic;
     color: var(--terracotta);
-    font-variation-settings: 'opsz' 36, 'SOFT' 80;
+    font-variation-settings: 'opsz' 36, 'SOFT' 100, 'WONK' 1;
   }
 
   .hero-bottom {
     opacity: 0;
-    animation: fadeIn 1.2s ease-out 1.2s forwards;
+    animation: fadeIn 1.2s ease-out 1.3s forwards;
   }
 
-  /* ============ LINKS SECTION ============ */
-  .links-section {
-    padding: 72px 0 88px;
-    background: var(--bone);
-  }
-
-  .section-title {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(36px, 10vw, 52px);
-    font-weight: 500;
-    line-height: 0.96;
-    letter-spacing: -0.035em;
-    color: var(--ink);
-    font-variation-settings: 'opsz' 144, 'SOFT' 30;
-    margin-bottom: 40px;
-  }
-
-  .section-title em {
-    font-style: italic;
-    color: var(--terracotta);
-    font-variation-settings: 'opsz' 144, 'SOFT' 100, 'WONK' 1;
-  }
-
-  .nav-list {
-    list-style: none;
+  /* ============ CARD STACK ============ */
+  .card-stack {
+    margin-top: 32px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
   }
 
-  .nav-list li {
-    margin: 0;
-    padding: 0;
-  }
-
-  .nav-list a {
-    display: block;
-    padding: 16px 18px;
+  .card {
+    padding: 22px 22px 24px;
     background: var(--paper);
     border: 1px solid var(--rule);
     border-radius: 4px;
-    color: var(--ink);
+    position: relative;
     text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    font-family: 'Fraunces', serif;
-    letter-spacing: -0.015em;
+    display: block;
+    color: var(--ink);
     transition: all 0.2s ease;
+  }
+
+  .card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 0;
+    letter-spacing: -0.018em;
     font-variation-settings: 'opsz' 36, 'SOFT' 40;
   }
 
-  .nav-list a:hover {
-    background: var(--bone-deep);
-    border-color: var(--terracotta);
-    color: var(--terracotta);
-  }
-
-  .nav-list a em {
+  .card em {
     font-style: italic;
     color: var(--terracotta);
-    font-variation-settings: 'opsz' 36, 'SOFT' 80, 'WONK' 1;
+    font-variation-settings: 'opsz' 36, 'SOFT' 100, 'WONK' 1;
   }
 
-  /* Coming soon badge */
-  .coming-soon {
-    display: inline-block;
-    margin-left: 8px;
-    padding: 2px 6px;
-    background: rgba(181, 72, 44, 0.1);
-    border: 1px solid var(--terracotta);
-    border-radius: 2px;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--terracotta);
-    font-family: 'DM Sans', sans-serif;
-  }
-
-  .nav-list .coming-soon-item a {
+  .card.coming-soon {
     background: rgba(181, 72, 44, 0.04);
     border-color: rgba(181, 72, 44, 0.25);
-    color: var(--ink-soft);
     cursor: not-allowed;
   }
 
-  .nav-list .coming-soon-item a:hover {
-    background: rgba(181, 72, 44, 0.08);
-    border-color: rgba(181, 72, 44, 0.3);
+  .card.coming-soon h3 {
     color: var(--ink-soft);
+  }
+
+  .card:not(.coming-soon):hover {
+    background: var(--bone-deep);
+    border-color: var(--terracotta);
+  }
+
+  /* ============ SECTIONS ============ */
+  .section-eyebrow {
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-eyebrow .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--terracotta);
+  }
+
+  .origin, .where {
+    padding: 48px 0 48px;
+    background: var(--bone);
+  }
+
+  .origin .container, .where .container {
+    text-align: left;
   }
 
   /* ============ FOOTER ============ */
   .footer {
-    padding: 48px 28px 56px;
+    padding: 40px 28px 48px;
     background: var(--bone);
     border-top: 1px solid var(--rule);
     text-align: center;
@@ -275,37 +277,65 @@
 </head>
 <body>
 
+<!-- ============ HERO ============ -->
 <section class="hero">
-  <div class="hero-headline">
-    <span class="familia">La Familia</span>
-    <span class="sub">Community Scholarship</span>
+  <div class="hero-top">
+    <div class="eyebrow eyebrow-accent">Chicago · 2026</div>
   </div>
-  <div class="hero-mission">
-    <em>Investing</em> in young leaders from underrepresented communities in tech.
+
+  <div>
+    <h1 class="hero-headline">
+      <span class="la">La</span>
+      <span class="familia">Familia</span>
+      <span class="sub">Community Scholarship</span>
+    </h1>
+
+    <p class="hero-mission">
+      Basketball is the front door. <em>Powerful mentorship is the next room.</em>
+    </p>
+
+    <div class="card-stack">
+      <div class="card coming-soon">
+        <h3>The Initiative <em>— visionary one-pager</em></h3>
+      </div>
+    </div>
   </div>
+
   <div class="hero-bottom"></div>
 </section>
 
-<section class="links-section">
+<!-- ============ WHERE WE ARE NOW ============ -->
+<section class="where">
   <div class="container">
-    <h2 class="section-title">Our <em>Work</em></h2>
-    <ul class="nav-list">
-      <li>
-        <a href="update-2026-05.html">May 2026 <em>Committee Update</em></a>
-      </li>
-      <li class="coming-soon-item">
-        <a>Initiative <em>One-Pager</em> <span class="coming-soon">Coming Soon</span></a>
-      </li>
-      <li class="coming-soon-item">
-        <a>Committee <em>Deck</em> <span class="coming-soon">Coming Soon</span></a>
-      </li>
-    </ul>
+    <div class="section-eyebrow"><div class="dot"></div><div class="eyebrow">Where we are now</div></div>
+
+    <div class="card-stack">
+      <div class="card coming-soon">
+        <h3>Strategy <em>&amp; Game Plan</em></h3>
+      </div>
+      <div class="card coming-soon">
+        <h3>Plan of <em>Activities</em></h3>
+      </div>
+    </div>
   </div>
 </section>
 
+<!-- ============ WORKSHOP HISTORY ============ -->
+<section class="origin">
+  <div class="container">
+    <div class="section-eyebrow"><div class="dot"></div><div class="eyebrow">Workshop history</div></div>
+
+    <div class="card-stack">
+      <a href="update-2026-05.html" class="card">
+        <h3>May 12, 2026 <em>— Launch session synthesis</em></h3>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
 <section class="footer">
   <p>La Familia Community Scholarship · Chicago · <em>2026</em></p>
-  <p style="margin-top: 12px; font-size: 13px;">Public initiative documentation</p>
 </section>
 
 </body>
