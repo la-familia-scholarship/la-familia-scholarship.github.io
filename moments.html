@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#1F1611" />
+<meta name="robots" content="noindex, nofollow" />
+<title>La Familia Community Scholarship — Moments</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bone: #F2EAD8; --bone-deep: #E8DDC4; --paper: #F7F0DE;
+    --ink: #1F1611; --ink-soft: #3A2A1F;
+    --terracotta: #B5482C; --terracotta-deep: #8E351F;
+    --copper: #2C4A42; --copper-deep: #1E332E;
+    --gold: #C99A3A; --gold-soft: #D9B056;
+    --muted: rgba(31, 22, 17, 0.55); --rule: rgba(31, 22, 17, 0.18);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+    font-size: 17px; line-height: 1.55; color: var(--ink); background: var(--bone);
+    overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  }
+  /* Warm grain overlay */
+  body::before {
+    content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 100;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.09 0 0 0 0 0.07 0 0 0 0.5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    opacity: 0.12; mix-blend-mode: multiply;
+  }
+
+  h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 500; letter-spacing: -0.02em; }
+
+  .container { max-width: 560px; margin: 0 auto; padding: 0 28px; }
+  section { position: relative; }
+
+  .eyebrow { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
+  .eyebrow-accent { color: var(--terracotta); }
+
+  /* ============ HERO ============ */
+  .hero { padding: 78px 28px 34px; }
+  .hero-top { display: flex; justify-content: space-between; align-items: flex-start;
+    gap: 16px; padding-left: 44px; }
+  .hero-top .mark { font-family: 'Fraunces', serif; font-style: italic; font-weight: 400;
+    font-size: 14px; color: var(--ink); letter-spacing: -0.01em; }
+  .page-title { font-family: 'Fraunces', serif; font-size: clamp(52px, 17vw, 88px);
+    font-weight: 600; line-height: 0.95; letter-spacing: -0.04em; color: var(--ink);
+    margin-top: 30px; font-variation-settings: 'opsz' 144, 'SOFT' 20; }
+  .page-sub { margin-top: 16px; font-family: 'Fraunces', serif; font-size: clamp(20px, 5.4vw, 25px);
+    line-height: 1.32; color: var(--ink); max-width: 420px; letter-spacing: -0.012em; }
+  .page-sub em { font-style: italic; color: var(--terracotta);
+    font-variation-settings: 'opsz' 36, 'SOFT' 80; }
+
+  /* ============ EVENT SECTION ============ */
+  .event { padding: 46px 0 8px; }
+  .section-eyebrow { margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+  .section-eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--terracotta); flex:none; }
+  .h-med { font-family: 'Fraunces', serif; font-size: clamp(32px, 9vw, 44px); font-weight: 480;
+    line-height: 1.03; letter-spacing: -0.03em; color: var(--ink); font-variation-settings: 'opsz' 72, 'SOFT' 30; }
+  .h-med em { font-style: italic; color: var(--terracotta); font-variation-settings: 'opsz' 72, 'SOFT' 100, 'WONK' 1; }
+  .lede { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 380; line-height: 1.4;
+    color: var(--ink-soft); margin: 16px 0 0; letter-spacing: -0.012em; }
+  .accent-line { margin: 18px 0 4px; }
+  .accent-line .es { display: block; font-family: 'Fraunces', serif; font-style: italic;
+    font-size: 23px; line-height: 1.15; color: var(--terracotta); letter-spacing: -0.015em;
+    font-variation-settings: 'opsz' 60, 'SOFT' 100, 'WONK' 1; }
+  .accent-line .en { display: block; margin-top: 6px; font-size: 14px; color: var(--muted); line-height: 1.45; }
+
+  /* ============ GALLERY GRID ============ */
+  .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 26px; padding: 0 12px; }
+  .gallery a { display: block; overflow: hidden; border-radius: 3px; background: var(--ink);
+    text-decoration: none; }
+  .gallery a:first-child { grid-column: 1 / -1; }
+  .gallery img { width: 100%; height: 100%; object-fit: cover; display: block;
+    aspect-ratio: 4 / 3; filter: saturate(0.96) contrast(1.02); transition: transform .55s cubic-bezier(.22,.61,.36,1); }
+  .gallery a:first-child img { aspect-ratio: 16 / 9; }
+  .gallery a:hover img { transform: scale(1.035); }
+  .grid-note { margin: 12px 12px 0; font-family: 'Fraunces', serif; font-style: italic;
+    font-size: 12.5px; color: var(--muted); }
+
+  /* ============ CLOSER ============ */
+  .closer { margin-top: 64px; background: var(--ink); color: var(--paper); padding: 62px 28px 70px; text-align: center; }
+  .closer .es { font-family: 'Fraunces', serif; font-style: italic; font-size: clamp(26px, 7vw, 34px);
+    color: var(--gold-soft); letter-spacing: -0.02em; line-height: 1.15;
+    font-variation-settings: 'opsz' 72, 'SOFT' 100, 'WONK' 1; }
+  .closer .en { margin-top: 12px; font-size: 14px; color: rgba(242, 234, 216, 0.7); line-height: 1.5; }
+  .closer .back { display: inline-block; margin-top: 26px; font-family: 'Fraunces', serif;
+    font-style: italic; font-size: 14px; color: var(--gold-soft); text-decoration: none;
+    border-bottom: 1px solid rgba(217, 176, 86, 0.4); padding-bottom: 2px; }
+  .closer .rule { margin-top: 30px; font-size: 12px; letter-spacing: 0.06em; color: rgba(242, 234, 216, 0.5); }
+
+  /* ============ MENU ============ */
+  .menu-btn { position:fixed; top:16px; left:16px; z-index:200; width:46px; height:46px; border-radius:11px;
+    background:rgba(242,234,216,0.92); border:1px solid var(--rule); cursor:pointer; display:flex;
+    flex-direction:column; align-items:center; justify-content:center; gap:5px; box-shadow:0 2px 12px rgba(31,22,17,0.16); }
+  .menu-btn span { display:block; width:20px; height:2px; background:var(--terracotta); border-radius:2px; }
+  .menu-btn:hover { background:var(--bone); }
+  .menu-overlay { position:fixed; inset:0; z-index:300; background:var(--ink); color:var(--paper);
+    opacity:0; visibility:hidden; transition:opacity .35s ease; overflow-y:auto; }
+  .menu-overlay.open { opacity:1; visibility:visible; }
+  .menu-inner { max-width:560px; margin:0 auto; padding:78px 28px 64px; }
+  .menu-close { position:absolute; top:16px; right:22px; background:none; border:none; color:var(--paper);
+    font-size:32px; line-height:1; cursor:pointer; font-family:'Fraunces',serif; }
+  .menu-home { display:inline-block; font-family:'Fraunces',serif; font-style:italic; font-size:14px;
+    color:var(--gold-soft); text-decoration:none; margin-bottom:26px;
+    font-variation-settings:'opsz' 36,'SOFT' 80,'WONK' 1; }
+  .menu-group { font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:rgba(242,234,216,0.5); margin:26px 0 6px; }
+  a.menu-link { display:flex; justify-content:space-between; align-items:center; gap:14px; padding:13px 0;
+    border-bottom:1px solid rgba(242,234,216,0.14); text-decoration:none; color:var(--paper); }
+  a.menu-link > span:first-child { flex:1; }
+  a.menu-link .ml-t { display:block; font-family:'Fraunces',serif; font-size:21px; font-weight:500; line-height:1.12;
+    letter-spacing:-0.02em; color:var(--paper); font-variation-settings:'opsz' 40,'SOFT' 40; }
+  a.menu-link .ml-d { display:block; font-size:12px; color:rgba(242,234,216,0.6); margin-top:4px; }
+  a.menu-link .ml-x { color:var(--gold-soft); font-size:12px; letter-spacing:0.04em; white-space:nowrap; flex:none; }
+  a.menu-link:hover .ml-t { color:var(--gold-soft); }
+  body.menu-open { overflow:hidden; }
+
+  /* ============ REVEAL ============ */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s ease-out, transform .9s cubic-bezier(.22,.61,.36,1); }
+  .reveal.in-view { opacity: 1; transform: translateY(0); }
+  .reveal-d1 { transition-delay: .1s; } .reveal-d2 { transition-delay: .2s; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    .reveal { opacity: 1; transform: none; }
+  }
+
+  /* ============ RESPONSIVE (DESKTOP) ============ */
+  @media (min-width: 720px) {
+    body { font-size: 18px; }
+    .container { padding: 0 48px; max-width: 680px; }
+    .hero { padding: 92px 48px 40px; }
+    .gallery { grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 760px; margin: 26px auto 0; padding: 0 48px; }
+    .gallery a:first-child img { aspect-ratio: 21 / 9; }
+    .grid-note { margin: 12px 48px 0; }
+  }
+</style>
+</head>
+<body>
+
+<button class="menu-btn" aria-label="Open menu" aria-expanded="false" onclick="openMenu()">
+  <span></span><span></span><span></span>
+</button>
+<div class="menu-overlay" id="menu" role="dialog" aria-label="Site menu">
+  <div class="menu-inner">
+    <button class="menu-close" aria-label="Close menu" onclick="closeMenu()">&times;</button>
+    <a class="menu-home" href="index.html">&larr; La Familia &middot; Vision &amp; strategy</a>
+
+    <div class="menu-group">The current plan</div>
+    <a class="menu-link" href="plan.html"><span><span class="ml-t">Objectives, initiatives &amp; tactics</span><span class="ml-d">What&rsquo;s outstanding right now</span></span><span class="ml-x">Page &rarr;</span></a>
+
+    <div class="menu-group">The summer</div>
+    <a class="menu-link" href="moments.html"><span><span class="ml-t">Moments</span><span class="ml-d">Washington &amp; the McCann camping trip, in pictures</span></span><span class="ml-x">Page &rarr;</span></a>
+
+    <div class="menu-group">Forms</div>
+    <a class="menu-link" href="forms/intake.pdf" target="_blank" rel="noopener"><span><span class="ml-t">Young men&rsquo;s intake</span><span class="ml-d">Contact info &amp; a low-pressure read on interest</span></span><span class="ml-x">PDF &rarr;</span></a>
+    <a class="menu-link" href="forms/application.pdf" target="_blank" rel="noopener"><span><span class="ml-t">Scholarship / participation application</span><span class="ml-d">One application, with an age branch</span></span><span class="ml-x">PDF &rarr;</span></a>
+    <a class="menu-link" href="forms/consent.pdf" target="_blank" rel="noopener"><span><span class="ml-t">Guardian consent &amp; authorization</span><span class="ml-d">Print &amp; sign &middot; with overnight-trip addendum</span></span><span class="ml-x">PDF &rarr;</span></a>
+    <a class="menu-link" href="forms/gift.pdf" target="_blank" rel="noopener"><span><span class="ml-t">Gift acknowledgment</span><span class="ml-d">Documents each contribution as a gift</span></span><span class="ml-x">PDF &rarr;</span></a>
+
+    <div class="menu-group">Working-session syntheses</div>
+    <a class="menu-link" href="syntheses/2026-07-17.pdf" target="_blank" rel="noopener"><span><span class="ml-t">Meeting #7 &mdash; July 17, 2026</span><span class="ml-d">What&rsquo;s outstanding, right now</span></span><span class="ml-x">PDF &rarr;</span></a>
+    <a class="menu-link" href="syntheses/2026-07-01.pdf" target="_blank" rel="noopener"><span><span class="ml-t">Meeting #6 &mdash; July 1, 2026</span><span class="ml-d">Execution and lock</span></span><span class="ml-x">PDF &rarr;</span></a>
+    <a class="menu-link" href="syntheses/2026-06-24.pdf" target="_blank" rel="noopener"><span><span class="ml-t">Meeting #5 &mdash; June 24, 2026</span><span class="ml-d">From plan to action</span></span><span class="ml-x">PDF &rarr;</span></a>
+    <a class="menu-link" href="syntheses/2026-06-17.pdf" target="_blank" rel="noopener"><span><span class="ml-t">Meeting #4 &mdash; June 17, 2026</span><span class="ml-d">The backbone made real</span></span><span class="ml-x">PDF &rarr;</span></a>
+    <a class="menu-link" href="syntheses/2026-06-09.pdf" target="_blank" rel="noopener"><span><span class="ml-t">Meeting #3 &mdash; June 9, 2026</span><span class="ml-d">The synthesis we can return to</span></span><span class="ml-x">PDF &rarr;</span></a>
+    <a class="menu-link" href="syntheses/2026-05-19.pdf" target="_blank" rel="noopener"><span><span class="ml-t">Meeting #2 &mdash; May 19, 2026</span><span class="ml-d">The vision made tactical</span></span><span class="ml-x">PDF &rarr;</span></a>
+    <a class="menu-link" href="syntheses/2026-05-12.pdf" target="_blank" rel="noopener"><span><span class="ml-t">Founding workshop &mdash; May 12, 2026</span><span class="ml-d">Where it began</span></span><span class="ml-x">PDF &rarr;</span></a>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="hero-top">
+    <div class="eyebrow eyebrow-accent">Chicago &middot; Est. 2026</div>
+    <div class="mark">Moments</div>
+  </div>
+  <h1 class="page-title">Moments</h1>
+  <p class="page-sub">The summer, in pictures — <em>where the work actually happens.</em></p>
+</section>
+
+<!-- ============ WASHINGTON ============ -->
+<section class="event">
+  <div class="container">
+    <div class="section-eyebrow reveal"><div class="dot"></div><div class="eyebrow">Washington, D.C. &middot; Summer 2026</div></div>
+    <h2 class="h-med reveal reveal-d1">The <em>send-off.</em></h2>
+    <p class="lede reveal reveal-d2">Two of our scholars earned a place at a selective university leadership program in the capital — a week of moot-court advocacy, formal presentations, and a first walk through the halls where the country&rsquo;s decisions get made.</p>
+    <p class="accent-line reveal reveal-d2">
+      <span class="es">De la cancha al Capitolio.</span>
+      <span class="en">From the court to the Capitol — coats, ties, and a week of leading.</span>
+    </p>
+  </div>
+  <div class="gallery reveal">
+    <a href="images/events/washington/washington-01.jpg" target="_blank" rel="noopener"><img src="images/events/washington/washington-01.jpg" loading="lazy" alt="Two La Familia scholars in blazers outside the U.S. Capitol"></a>
+    <a href="images/events/washington/washington-02.jpg" target="_blank" rel="noopener"><img src="images/events/washington/washington-02.jpg" loading="lazy" alt="Four scholars on the steps of the Library of Congress"></a>
+    <a href="images/events/washington/washington-03.jpg" target="_blank" rel="noopener"><img src="images/events/washington/washington-03.jpg" loading="lazy" alt="A scholar at the podium in the Washington College of Law courtroom"></a>
+    <a href="images/events/washington/washington-04.jpg" target="_blank" rel="noopener"><img src="images/events/washington/washington-04.jpg" loading="lazy" alt="Two scholars presenting at a moot-court session"></a>
+    <a href="images/events/washington/washington-05.jpg" target="_blank" rel="noopener"><img src="images/events/washington/washington-05.jpg" loading="lazy" alt="Scholars at the Leadership Initiatives program backdrop"></a>
+    <a href="images/events/washington/washington-06.jpg" target="_blank" rel="noopener"><img src="images/events/washington/washington-06.jpg" loading="lazy" alt="Portrait of a scholar in a suit and program lanyard"></a>
+  </div>
+  <p class="grid-note reveal">Tap any photo to open it full-size.</p>
+</section>
+
+<!-- ============ McCANN CAMPING ============ -->
+<section class="event">
+  <div class="container">
+    <div class="section-eyebrow reveal"><div class="dot"></div><div class="eyebrow">The Northwoods &middot; Summer 2026</div></div>
+    <h2 class="h-med reveal reveal-d1">McCann <em>camping.</em></h2>
+    <p class="lede reveal reveal-d2">The whole crew off the block and into the Northwoods — a rustic lodge, a river outfitter, canoes on the water, cabins with names like &ldquo;Dad&rsquo;s Cabin,&rdquo; and a rainstorm nobody&rsquo;s going to forget.</p>
+    <p class="accent-line reveal reveal-d2">
+      <span class="es">Lejos de la ciudad — juntos.</span>
+      <span class="en">Far from the city, together — the summer trip.</span>
+    </p>
+  </div>
+  <div class="gallery reveal">
+    <a href="images/events/mccann-camping/mccann-01.jpg" target="_blank" rel="noopener"><img src="images/events/mccann-camping/mccann-01.jpg" loading="lazy" alt="The crew walking up to the waterfront kayak barn"></a>
+    <a href="images/events/mccann-camping/mccann-02.jpg" target="_blank" rel="noopener"><img src="images/events/mccann-camping/mccann-02.jpg" loading="lazy" alt="Dad's Cabin lit up at night"></a>
+    <a href="images/events/mccann-camping/mccann-03.jpg" target="_blank" rel="noopener"><img src="images/events/mccann-camping/mccann-03.jpg" loading="lazy" alt="The rustic log lodge great room with a stone fireplace"></a>
+    <a href="images/events/mccann-camping/mccann-04.jpg" target="_blank" rel="noopener"><img src="images/events/mccann-camping/mccann-04.jpg" loading="lazy" alt="The lodge dining hall"></a>
+    <a href="images/events/mccann-camping/mccann-05.jpg" target="_blank" rel="noopener"><img src="images/events/mccann-camping/mccann-05.jpg" loading="lazy" alt="The group at the river outfitter's shop"></a>
+    <a href="images/events/mccann-camping/mccann-06.jpg" target="_blank" rel="noopener"><img src="images/events/mccann-camping/mccann-06.jpg" loading="lazy" alt="The crew in rain ponchos during a downpour"></a>
+    <a href="images/events/mccann-camping/mccann-07.jpg" target="_blank" rel="noopener"><img src="images/events/mccann-camping/mccann-07.jpg" loading="lazy" alt="A scholar on the lodge deck"></a>
+    <a href="images/events/mccann-camping/mccann-08.jpg" target="_blank" rel="noopener"><img src="images/events/mccann-camping/mccann-08.jpg" loading="lazy" alt="A committee member in a camp chair at night"></a>
+    <a href="images/events/mccann-camping/mccann-09.jpg" target="_blank" rel="noopener"><img src="images/events/mccann-camping/mccann-09.jpg" loading="lazy" alt="A committee member beside a metal Bigfoot sculpture"></a>
+    <a href="images/events/mccann-camping/mccann-10.jpg" target="_blank" rel="noopener"><img src="images/events/mccann-camping/mccann-10.jpg" loading="lazy" alt="Timber-and-branch detail of the cabin loft"></a>
+  </div>
+  <p class="grid-note reveal">Tap any photo to open it full-size.</p>
+</section>
+
+<!-- ============ CLOSER ============ -->
+<section class="closer">
+  <div class="es">Una comunidad, un verano a la vez.</div>
+  <div class="en">A community, one summer at a time.</div>
+  <a class="back" href="index.html">&larr; Back to Vision &amp; strategy</a>
+  <div class="rule">La Familia Community Scholarship &middot; Chicago &middot; 2026</div>
+</section>
+
+<script>
+  function openMenu(){ document.getElementById('menu').classList.add('open'); document.body.classList.add('menu-open'); document.querySelector('.menu-btn').setAttribute('aria-expanded','true'); }
+  function closeMenu(){ document.getElementById('menu').classList.remove('open'); document.body.classList.remove('menu-open'); document.querySelector('.menu-btn').setAttribute('aria-expanded','false'); }
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeMenu(); });
+  document.getElementById('menu').addEventListener('click', function(e){ if(e.target.id==='menu') closeMenu(); });
+</script>
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('in-view'); io.unobserve(entry.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
